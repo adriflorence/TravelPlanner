@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+    <head>
+        <meta charset="utf-8">
+        <title>Travel Planner</title>
+    </head>
+
+    <body>
+
+        <header>
+            <div id="logo"></div>
+            <div class="title">Travel Planner</div>
+        </header>
+
+        <main>
+            <section>
+                <div id="main_image" alt="Some picture about travelling"></div>
+            </section>
+            <section>
+                <form id="form" onsubmit="return Client.handleSubmit(event)" method="POST">
+                    <input id="city" type="text" name="input" value="" placeholder="Where would you like to go?">
+                    <input id="date" type="date">
+                    <input type="submit" value="submit">
+                </form>
+            <section>
+
+            <section>
+                <div id="error"></div>
+                <div id="results">
+                    <p id="temperature"></p>
+                    <p id="description"></p>
+                    <img id="image" src="">
+                </div>
+            </section>
+        </main>
+
+        <footer class="footer">
+            <p>adriflorence</p>
+        </footer>
+    </body>
+</html>

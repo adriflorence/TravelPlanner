@@ -1,0 +1,49 @@
+$yellow: #edb02e;
+$orange: #FB8B24;
+$red: #f54d3b;
+$green: #30b955;
+
+body {
+    display: flex;
+    flex-direction: column;
+    background-color: $orange;
+    min-height: 100vh;
+    line-height: 2em;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+main {
+    flex: 2;
+    text-align: justify;
+}
+
+section {
+    max-width: 800px;
+    margin: 50px auto;
+
+    p {
+        text-indent: 3em;
+    }
+
+    a {
+        text-decoration: none;
+        color: $yellow;
+    }
+
+    #error {
+        color: $red;
+    }
+
+    #main_image {
+        background-image: url('../media/airplane.png');
+        background-repeat: no-repeat;
+        background-size: contain;
+        height: 100px;
+        width: 100px;
+        margin: 0px auto;
+    }
+
+    img {
+        margin: 0px auto;
+    }
+}
