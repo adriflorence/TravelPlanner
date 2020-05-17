@@ -64,4 +64,4 @@ function daysBetween(start_date, end_date){
 }
 
 
-export { handleSubmit }
+export { handleSubmit, daysBetween }
