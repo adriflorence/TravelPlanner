@@ -2,11 +2,12 @@ $yellow: #edb02e;
 $orange: #FB8B24;
 $red: #f54d3b;
 $green: #30b955;
+$blue: #12263A;
 
 body {
     display: flex;
     flex-direction: column;
-    background-color: $orange;
+    background-color: $yellow;
     min-height: 100vh;
     line-height: 2em;
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
@@ -19,15 +20,19 @@ main {
 
 section {
     max-width: 800px;
-    margin: 50px auto;
+    margin: 0 auto;
 
     p {
         text-indent: 3em;
+        color: $blue;
     }
 
     a {
         text-decoration: none;
-        color: $yellow;
+    }
+
+    &#header_panel {
+        margin: 50px auto 0;
     }
 
     #error {
@@ -43,7 +48,15 @@ section {
         margin: 0px auto;
     }
 
-    img {
-        margin: 0px auto;
+    #results {
+
+        width: 800px;
+        text-align: center;
+
+        img {
+            margin: auto;
+            display: block;
+        }
     }
+
 }

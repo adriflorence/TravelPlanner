@@ -1,5 +1,17 @@
 form {
     padding: 40px;
+
+    #dates {
+        display: flex;
+
+        label {
+            display: block;
+        }
+
+        span {
+            width: 100%;
+        }
+    }
 }
 
 input {
@@ -7,4 +19,10 @@ input {
     width: 100%;
     line-height: 16px;
     margin: 10px 0;
+}
+
+input[type=submit]{
+    background-color: #12263A;
+    color: white;
+    border: none;
 }

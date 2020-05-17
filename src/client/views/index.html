@@ -13,13 +13,23 @@
         </header>
 
         <main>
-            <section>
-                <div id="main_image" alt="Some picture about travelling"></div>
+            <section id="header_panel">
+                <div id="main_image" alt="A drawing of a plane flying over Earth"></div>
             </section>
             <section>
                 <form id="form" onsubmit="return Client.handleSubmit(event)" method="POST">
+                    <label for="city">Destination:</label>
                     <input id="city" type="text" name="input" value="" placeholder="Where would you like to go?">
-                    <input id="date" type="date">
+                    <div id="dates">
+                        <span>
+                            <label for="start_date">Start date:</label>
+                            <input id="start_date" type="date">
+                        </span>
+                        <span>
+                            <label for="end_date">End date:</label>
+                            <input id="end_date" type="date">
+                        </span>
+                    </div>
                     <input type="submit" value="submit">
                 </form>
             <section>
@@ -27,6 +37,7 @@
             <section>
                 <div id="error"></div>
                 <div id="results">
+                    <p id="message"></p>
                     <p id="temperature"></p>
                     <p id="description"></p>
                     <img id="image" src="">

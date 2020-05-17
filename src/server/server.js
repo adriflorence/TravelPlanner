@@ -21,7 +21,7 @@ app.post("/api", async (req, res) => {
 
     // geo stuff
     const city = req.body.city;
-    const date = req.body.date;
+    const start_date = req.body.start_date;
     const geolocation = await fetch(`http://api.geonames.org/search?name=${city}&username=${process.env.username}&type=json`);
     const geo_json = await geolocation.json(); // returned as object
     const first_result = geo_json.geonames[0];
@@ -32,7 +32,7 @@ app.post("/api", async (req, res) => {
     const weather_url = `https://api.weatherbit.io/v2.0/forecast/daily?key=${process.env.WEATHERBIT_KEY}&lat=${latitude}&lon=${longitude}`
     const weather = await fetch(weather_url);
     const weather_json = await weather.json();
-    const forecast = getForecastForDay(date, weather_json.data)
+    const forecast = getForecastForDay(start_date, weather_json.data)
     const description = getForecastDescription(forecast)
 
     // picture stuff
@@ -51,8 +51,8 @@ function getForecastDescription(forecast) {
     return "";
 }
 
-function getForecastForDay(date, forecasts) {
-    const filtered = forecasts.filter(forecast => forecast.valid_date === date)
+function getForecastForDay(start_date, forecasts) {
+    const filtered = forecasts.filter(forecast => forecast.valid_date === start_date)
     if(filtered.length === 0) {
         return null;
     }

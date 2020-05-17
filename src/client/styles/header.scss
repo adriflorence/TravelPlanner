@@ -3,3 +3,11 @@ header {
     justify-content: space-between;
     padding: 10px 40px;
 }
+
+#logo {
+    background-image: url('../media/airplane.png');
+    background-repeat: no-repeat;
+    background-size: contain;
+    height: 40px;
+    width: 40px;
+}
