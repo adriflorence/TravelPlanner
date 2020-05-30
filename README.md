@@ -36,6 +36,10 @@ The project must:
 - [x] Response from the API must be added to the view for a user to see 
 - [x] Be able to show content offline
 
+### Extensions
+
+- [x] Ability to save travel destinations
+
 ### Resources
 
 Text and image are from https://www.nlpacademy.co.uk/what_is_nlp/
