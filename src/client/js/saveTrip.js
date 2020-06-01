@@ -4,15 +4,23 @@ function saveTrip() {
     let start_date = document.getElementById('start_date').value
     let end_date = document.getElementById('end_date').value
 
-    // save them to localStorage
-    window.localStorage.setItem('city', city);
-    window.localStorage.setItem('start_date', start_date);
-    window.localStorage.setItem('end_date', end_date);
+    // build array of trips
+    let trips = [];
+    let trip = {
+        'city': city,
+        'start_date': start_date,
+        'end_date': end_date,
+    }
+    trips.push(trip);
+
+    // save to localStorage
+    window.localStorage.setItem('trips', JSON.stringify(trips));
 
     // display saved entry on front-end
-    let saved_trip = document.getElementById('saved_trips');
-    let ls_city = window.localStorage.getItem('city');
-    saved_trip.innerText = ls_city;
+    let saved_trips = document.getElementById('saved_trips');
+    let localStorage_trips = window.localStorage.getItem('trips');
+    console.log(localStorage_trips);
+    // saved_trip.innerText = localStorage_trips;
 }
 
 export { saveTrip }
