@@ -4,8 +4,12 @@ function saveTrip() {
     let start_date = document.getElementById('start_date').value
     let end_date = document.getElementById('end_date').value
 
-    // build array of trips
-    let trips = [];
+    // get trips from localStorage if there are any, declare empty array if none
+    let local_storage_trips_json = window.localStorage.getItem('trips');
+
+    let trips = getTrips(local_storage_trips_json);
+    
+    // build trip object and add to previous trips / or to empty array
     let trip = {
         'city': city,
         'start_date': start_date,
@@ -13,14 +17,20 @@ function saveTrip() {
     }
     trips.push(trip);
 
+    // display saved entry on front-end
+    trips.innerText = trips;
+
     // save to localStorage
     window.localStorage.setItem('trips', JSON.stringify(trips));
+    
+}
 
-    // display saved entry on front-end
-    let saved_trips = document.getElementById('saved_trips');
-    let localStorage_trips = window.localStorage.getItem('trips');
-    console.log(localStorage_trips);
-    // saved_trip.innerText = localStorage_trips;
+function getTrips(trips){
+    if(trips === null) {
+        return [];
+    } else {
+        return JSON.parse(trips);
+    }
 }
 
 export { saveTrip }
