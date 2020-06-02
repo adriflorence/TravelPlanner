@@ -1,20 +1,34 @@
+// get saved trips from localStorage
 function loadTrips() {
 
-    // get saved trips from localStorage
     let local_storage_trips_json = window.localStorage.getItem('trips');
     let trips = local_storage_trips_json === null ? [] : JSON.parse(local_storage_trips_json);
+    return trips;
+}
 
-    // display saved trips on front end
+// display saved trips on front end
+function displayTrips(trips) {
+    
     let saved_trips = document.getElementById('saved_trips');
     
-    for(const trip of trips) {
-        let p = document.createElement("p");
-        p.innerText = JSON.stringify(trip);
-        saved_trips.appendChild(p);
+    if(trips.length > 0) {
+        let title = document.createElement("h1");
+        title.innerText = "Saved trips";
+        title.style.textTransform = "uppercase";
+        saved_trips.appendChild(title);
+        saved_trips.style.border = "2px solid black";
+
+        for(const trip of trips) {
+            let p = document.createElement("p");
+            p.innerText = trip.city + ", date: " + trip.start_date;
+            saved_trips.appendChild(p);
+        }
     }
 }
 
+// save trip to localStorage
 function saveTrip() {
+    let trips = loadTrips();
 
     // get trip details out of HTML elements
     let city = document.getElementById('city').value
@@ -33,4 +47,4 @@ function saveTrip() {
     window.localStorage.setItem('trips', JSON.stringify(trips));
 }
 
-export { loadTrips, saveTrip }
+export { loadTrips, saveTrip, displayTrips }

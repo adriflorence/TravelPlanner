@@ -48,6 +48,7 @@ function buildInnerHTML(response, city, start_date, end_date = null) {
 }
 
 function buildMessage(city, start_date, end_date){
+
     let countdown = daysBetween(new Date(), new Date(start_date));
     if(!end_date){
         return `You are going to ${city} on ${start_date}. Your trip is in ${countdown} days.`
@@ -58,10 +59,10 @@ function buildMessage(city, start_date, end_date){
 }
 
 function daysBetween(start_date, end_date){
+
     let time_diff = end_date.getTime() - start_date.getTime();
     let day_diff = time_diff / (1000 * 3600 * 24);
     return Math.floor(day_diff);
 }
-
 
 export { handleSubmit, daysBetween }
