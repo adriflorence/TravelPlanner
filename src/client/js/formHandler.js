@@ -40,6 +40,12 @@ function validateFields(city, start_date){
 function buildInnerHTML(response, city, start_date, end_date = null) {
     let message = buildMessage(city, start_date, end_date)
 
+    let button = document.createElement("button");
+    button.innerText = "Save";
+    button.onclick = Client.saveTrip();
+    let results = document.getElementById('results');
+    results.appendChild(button);
+
     document.getElementById('error').innerText = '';
     document.getElementById('temperature').innerText = `Temperature: ${response.temp} °C`;
     document.getElementById('description').innerText = response.description;
