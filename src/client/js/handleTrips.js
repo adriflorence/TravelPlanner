@@ -15,12 +15,25 @@ function displayTrips(trips) {
         let title = document.createElement("h1");
         title.innerText = "Saved trips";
         title.style.textTransform = "uppercase";
+
         saved_trips.appendChild(title);
         saved_trips.style.border = "2px solid black";
+        saved_trips.style.padding = "2em";
 
         for(const trip of trips) {
+            // remove button
+            let button = document.createElement("button");
+            button.innerText = "X";
+            button.style.background = 'none';
+            button.style.border = 'none';
+            button.style.cursor = 'pointer';
+            button.id = trip.city;
+
+            // each trip
             let p = document.createElement("p");
-            p.innerText = trip.city + ", date: " + trip.start_date;
+            p.innerText = trip.start_date + ": " + trip.city;
+            p.appendChild(button);
+
             saved_trips.appendChild(p);
         }
     }
@@ -45,6 +58,10 @@ function saveTrip() {
 
     // save to localStorage
     window.localStorage.setItem('trips', JSON.stringify(trips));
+}
+
+function removeTrip() {
+
 }
 
 export { loadTrips, saveTrip, displayTrips }

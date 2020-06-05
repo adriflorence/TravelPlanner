@@ -39,6 +39,8 @@ The project must:
 ### Extensions
 
 - [x] Ability to save travel destinations
+- [] Ability to delete travel destinations
+- [] Page is fully responsive
 
 ### Resources
 
