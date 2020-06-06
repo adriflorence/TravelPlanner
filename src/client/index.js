@@ -1,5 +1,5 @@
 import { handleSubmit } from './js/formHandler'
-import { saveTrip, loadTrips, displayTrips } from './js/handleTrips'
+import { saveTrip, removeTrip, loadTrips, displayTrips } from './js/handleTrips'
 
 import './styles/resets.scss'
 import './styles/base.scss'
@@ -15,5 +15,6 @@ window.onload = (event) => {
 // Js files are being exported to 'Client' library (Output set in webpack.dev.js)
 export {
     handleSubmit,
-    saveTrip
+    saveTrip,
+    removeTrip
 }

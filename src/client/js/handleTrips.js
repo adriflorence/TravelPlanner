@@ -20,18 +20,23 @@ function displayTrips(trips) {
         saved_trips.style.border = "2px solid black";
         saved_trips.style.padding = "2em";
 
-        for(const trip of trips) {
+        for(let i = 0; i < trips.length; i++) {
+            let trip = trips[0];
+            let index = i + 1;
+
             // remove button
             let button = document.createElement("button");
             button.innerText = "X";
             button.style.background = 'none';
             button.style.border = 'none';
             button.style.cursor = 'pointer';
-            button.id = trip.city;
+            let id = "trip_" + index; // dynamically create id for each paragraph and pass it in to removeTrip function
+            button.addEventListener("click", function(){ Client.removeTrip(id) });
 
             // each trip
             let p = document.createElement("p");
             p.innerText = trip.start_date + ": " + trip.city;
+            p.id = id;
             p.appendChild(button);
 
             saved_trips.appendChild(p);
@@ -42,6 +47,7 @@ function displayTrips(trips) {
 // save trip to localStorage
 function saveTrip() {
     let trips = loadTrips();
+    let index = trips.length + 1;
 
     // get trip details out of HTML elements
     let city = document.getElementById('city').value
@@ -50,6 +56,7 @@ function saveTrip() {
     
     // build trip object and add to previous trips / to empty array
     let trip = {
+        'id': "trip_" + index,
         'city': city,
         'start_date': start_date,
         'end_date': end_date,
@@ -60,8 +67,12 @@ function saveTrip() {
     window.localStorage.setItem('trips', JSON.stringify(trips));
 }
 
-function removeTrip() {
+function removeTrip(trip_id) {
+    // remove from front end
+    let trip = document.getElementById(trip_id);
+    if(trip) trip.remove();
 
+    // remove from localStorage
 }
 
-export { loadTrips, saveTrip, displayTrips }
+export { loadTrips, displayTrips, saveTrip, removeTrip }
