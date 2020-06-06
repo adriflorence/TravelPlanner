@@ -21,7 +21,7 @@ function displayTrips(trips) {
         saved_trips.style.padding = "2em";
 
         for(let i = 0; i < trips.length; i++) {
-            let trip = trips[0];
+            let trip = trips[i];
             let index = i + 1;
 
             // remove button
@@ -73,6 +73,10 @@ function removeTrip(trip_id) {
     if(trip) trip.remove();
 
     // remove from localStorage
+    let trips = loadTrips();
+    let remaining_trips = trips.filter(trip => trip.id !== trip_id)
+
+    window.localStorage.setItem('trips', JSON.stringify(remaining_trips));
 }
 
 export { loadTrips, displayTrips, saveTrip, removeTrip }
