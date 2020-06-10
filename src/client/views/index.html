@@ -4,55 +4,51 @@
         <meta charset="utf-8">
         <title>Travel Planner</title>
     </head>
-
     <body>
+        <div class="grid-container">
+            <header class="header">
+                <div id="logo responsive"></div>
+                <div class="title">Travel Planner</div>
+            </header>
+            <main class="container">
+                <section>
+                    <form id="form" onsubmit="return Client.handleSubmit(event)" method="POST">
+                        <label for="city">Destination:</label>
+                        <input id="city" type="text" name="input" value="" placeholder="Where would you like to go?">
+                        <div id="dates">
+                            <span>
+                                <label for="start_date">Start date:</label>
+                                <input id="start_date" type="date">
+                            </span>
+                            <span>
+                                <label for="end_date">End date:</label>
+                                <input id="end_date" type="date">
+                            </span>
+                        </div>
+                        <input type="submit" value="submit">
+                    </form>
+                <section>
 
-        <header>
-            <div id="logo"></div>
-            <div class="title">Travel Planner</div>
-        </header>
-
-        <main>
-            <section id="header_panel">
-                <div id="main_image" alt="A drawing of a plane flying over Earth"></div>
-            </section>
-            <section>
-                <form id="form" onsubmit="return Client.handleSubmit(event)" method="POST">
-                    <label for="city">Destination:</label>
-                    <input id="city" type="text" name="input" value="" placeholder="Where would you like to go?">
-                    <div id="dates">
-                        <span>
-                            <label for="start_date">Start date:</label>
-                            <input id="start_date" type="date">
-                        </span>
-                        <span>
-                            <label for="end_date">End date:</label>
-                            <input id="end_date" type="date">
-                        </span>
+                <section>
+                    <div id="error"></div>
+                    <div id="results">
+                        <p id="message"></p>
+                        <p id="temperature"></p>
+                        <p id="description"></p>
+                        <img id="image" src="">
                     </div>
-                    <input type="submit" value="submit">
-                </form>
-            <section>
+                </section>
 
-            <section>
-                <div id="error"></div>
-                <div id="results">
-                    <p id="message"></p>
-                    <p id="temperature"></p>
-                    <p id="description"></p>
-                    <img id="image" src="">
-                </div>
-            </section>
+                <section>
+                    <div id="saved_trips">
 
-            <section>
-                <div id="saved_trips">
+                    </div>
+                </section>
+            </main>
 
-                </div>
-            </section>
-        </main>
-
-        <footer class="footer">
-            <p>adriflorence</p>
-        </footer>
+            <footer class="footer">
+                <p>adriflorence</p>
+            </footer>
+        </div>
     </body>
 </html>

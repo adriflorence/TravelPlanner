@@ -10,12 +10,18 @@ body {
     background-color: $yellow;
     min-height: 100vh;
     line-height: 2em;
+    font-size: 4em;
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
 
 main {
     flex: 2;
     text-align: justify;
+}
+
+.responsive {
+    width: 100%;
+    height: auto;
 }
 
 section {
@@ -39,6 +45,11 @@ section {
         color: $red;
     }
 
+    #saved_trips {
+        border: 2px solid black;
+        padding: 1em;
+    }
+
     #main_image {
         background-image: url('../media/airplane.png');
         background-repeat: no-repeat;
@@ -58,5 +69,30 @@ section {
             display: block;
         }
     }
+}
 
+/* Mobile First */
+
+.grid-container {
+    display: grid;
+    height: 95vh;
+    grid-template-columns: auto;
+    grid-template-rows: 1fr 10fr 1fr;
+    grid-gap: 0 3px;
+    grid-template-areas:
+        "header"
+        "container"
+        "footer";
+}
+
+.header {
+    grid-area: header;
+}
+
+.container {
+    grid-area: container;
+}
+
+.footer {
+    grid-area: footer;
 }
