@@ -1,13 +1,14 @@
 $yellow: #edb02e;
 $orange: #FB8B24;
 $red: #f54d3b;
-$green: #30b955;
-$blue: #12263A;
+$teal: #00a6a6;
+$lightblue: #c8edf8;
+$blue: #3e85a4;
 
 body {
     display: flex;
     flex-direction: column;
-    background-color: $yellow;
+    background-color: white;
     min-height: 100vh;
     line-height: 2em;
     font-size: 4em;
@@ -46,17 +47,9 @@ section {
     }
 
     #saved_trips {
-        border: 2px solid black;
-        padding: 1em;
-    }
-
-    #main_image {
-        background-image: url('../media/airplane.png');
-        background-repeat: no-repeat;
-        background-size: contain;
-        height: 100px;
-        width: 100px;
-        margin: 0px auto;
+        border-radius: 0.2em;
+        border: 2px solid $blue;
+        padding: 0.2em 1em;
     }
 
     #results {
@@ -85,14 +78,14 @@ section {
         "footer";
 }
 
-.header {
-    grid-area: header;
-}
-
 .container {
     grid-area: container;
 }
 
 .footer {
     grid-area: footer;
+    padding: 1em;
+    margin-top: 1em;
+    background-color: $teal;
+    color: white;
 }
