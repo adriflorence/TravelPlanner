@@ -1,8 +1,10 @@
+$teal: #00a6a6;
+$lightblue: #c8edf8;
+$blue: #3e85a4;
+
 form {
-    padding: 40px;
 
     #dates {
-        display: flex;
 
         label {
             display: block;
@@ -11,18 +13,26 @@ form {
         span {
             width: 100%;
         }
+
+        button {
+            font-size: 2em;
+        }
     }
+
 }
 
 input {
-    padding: 5px 20px;
-    width: 100%;
-    line-height: 16px;
-    margin: 10px 0;
+    border-radius: 0.2em;
+    border: 2px solid $blue;
+    font-size: 0.8em;
+    padding: 0.2em 1em;
+    line-height: 2em;
+    margin: 0.5em 0;
+    width: -webkit-fill-available;
 }
 
 input[type=submit]{
-    background-color: #12263A;
+    background-color: $teal;
     color: white;
     border: none;
 }

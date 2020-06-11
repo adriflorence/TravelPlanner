@@ -1,10 +1,4 @@
-# Natural Language Processing
-
-Natural Language Processing leverage machine learning and deep learning create a program that can interpret natural human speech. Systems like Alexa, Google Assistant, and many voice interaction programs are well known to us, but understanding human speech is an incredibly difficult task and requires a lot of resources to achieve. Full disclosure, this is the Wikipedia definition, but I found it to be a clear one:
-
-> Natural language processing (NLP) is a subfield of computer science, information engineering, and artificial intelligence
-concerned with the interactions between computers and human (natural) languages, in particular how to program computers to
-process and analyze large amounts of natural language data.
+# Travel Planner Application
 
 ### the APIs
 
@@ -38,9 +32,13 @@ The project must:
 
 ### Extensions
 
+- [x] User can add end date and display length of trip
 - [x] Ability to save travel destinations
 - [x] Ability to delete travel destinations
-- [] Page is fully responsive
+- [x] Local Storage is used to save data so that when users revisit the page their information is still available
+- [x] Page is fully responsive
+-  the REST Countries API is integrated to pull in data for the country being visited
+-  Icons are incorporated into forecast
 
 ### Resources
 

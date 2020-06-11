@@ -1,21 +1,28 @@
 $yellow: #edb02e;
 $orange: #FB8B24;
 $red: #f54d3b;
-$green: #30b955;
-$blue: #12263A;
+$teal: #00a6a6;
+$lightblue: #c8edf8;
+$blue: #3e85a4;
 
 body {
     display: flex;
     flex-direction: column;
-    background-color: $yellow;
+    background-color: white;
     min-height: 100vh;
     line-height: 2em;
+    font-size: 4em;
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
 
 main {
     flex: 2;
     text-align: justify;
+}
+
+.responsive {
+    width: 100%;
+    height: auto;
 }
 
 section {
@@ -39,13 +46,10 @@ section {
         color: $red;
     }
 
-    #main_image {
-        background-image: url('../media/airplane.png');
-        background-repeat: no-repeat;
-        background-size: contain;
-        height: 100px;
-        width: 100px;
-        margin: 0px auto;
+    #saved_trips {
+        border-radius: 0.2em;
+        border: 2px solid $blue;
+        padding: 0.2em 1em;
     }
 
     #results {
@@ -58,5 +62,30 @@ section {
             display: block;
         }
     }
+}
 
+/* Mobile First */
+
+.grid-container {
+    display: grid;
+    height: 95vh;
+    grid-template-columns: auto;
+    grid-template-rows: 1fr 10fr 1fr;
+    grid-gap: 0 3px;
+    grid-template-areas:
+        "header"
+        "container"
+        "footer";
+}
+
+.container {
+    grid-area: container;
+}
+
+.footer {
+    grid-area: footer;
+    padding: 1em;
+    margin-top: 1em;
+    background-color: $teal;
+    color: white;
 }

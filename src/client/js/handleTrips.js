@@ -17,8 +17,6 @@ function displayTrips(trips) {
         title.style.textTransform = "uppercase";
 
         saved_trips.appendChild(title);
-        saved_trips.style.border = "2px solid black";
-        saved_trips.style.padding = "2em";
 
         for(let i = 0; i < trips.length; i++) {
             let trip = trips[i];
