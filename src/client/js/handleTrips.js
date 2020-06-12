@@ -13,7 +13,7 @@ function displayTrips(trips) {
     
     if(trips.length > 0) {
         let title = document.createElement("h1");
-        title.innerText = "Saved trips";
+        title.innerText = "Your saved trips";
         title.style.textTransform = "uppercase";
 
         saved_trips.appendChild(title);
@@ -24,20 +24,21 @@ function displayTrips(trips) {
 
             // remove button
             let button = document.createElement("button");
-            button.innerText = "X";
-            button.style.background = 'none';
-            button.style.border = 'none';
-            button.style.cursor = 'pointer';
+            button.innerHTML = `<i class="fa fa-times" aria-hidden="true"></i>`;
+            button.classList.add('remove');
             let id = "trip_" + index; // dynamically create id for each paragraph and pass it in to removeTrip function
             button.addEventListener("click", function(){ Client.removeTrip(id) });
 
             // each trip
-            let p = document.createElement("p");
-            p.innerText = trip.start_date + ": " + trip.city;
-            p.id = id;
-            p.appendChild(button);
+            let trip_div = document.createElement("div");
+            trip_div.classList.add('saved_trip');
+            let trip_text = document.createElement("span");
+            trip_text.innerText = trip.start_date + ": " + trip.city;
+            trip_div.id = id;
+            trip_div.appendChild(trip_text);
+            trip_div.appendChild(button);
 
-            saved_trips.appendChild(p);
+            saved_trips.appendChild(trip_div);
         }
     }
 }
