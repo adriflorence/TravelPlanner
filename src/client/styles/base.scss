@@ -10,8 +10,7 @@ body {
     flex-direction: column;
     background-color: white;
     min-height: 100vh;
-    line-height: 2em;
-    font-size: 4em;
+    font-size: 16px;
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
 
@@ -27,15 +26,18 @@ main {
 
 section {
     max-width: 800px;
-    margin: 0 auto;
+    margin: 1em auto;
 
     p {
-        text-indent: 3em;
         color: $blue;
     }
 
     a {
         text-decoration: none;
+    }
+
+    .fa {
+        color: crimson;
     }
 
     &#header_panel {
@@ -48,18 +50,22 @@ section {
 
     #saved_trips {
         border-radius: 0.2em;
-        border: 2px solid $blue;
+        border: 1px solid $blue;
         padding: 0.2em 1em;
+
+        h1 {
+            padding: 1em 0;
+        }
     }
 
     #results {
 
-        width: 800px;
-        text-align: center;
+        font-size: 0.8em;
 
         img {
             margin: auto;
             display: block;
+            width: -webkit-fill-available;
         }
     }
 }
@@ -78,7 +84,9 @@ section {
         "footer";
 }
 
+
 .container {
+    padding: 2em;
     grid-area: container;
 }
 

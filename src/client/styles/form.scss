@@ -21,9 +21,9 @@ form {
 
 }
 
-input {
+input, button {
     border-radius: 0.2em;
-    border: 2px solid $blue;
+    border: 1px solid $blue;
     font-size: 0.8em;
     padding: 0.2em 1em;
     line-height: 2em;
@@ -31,8 +31,20 @@ input {
     width: -webkit-fill-available;
 }
 
-input[type=submit]{
+input[type=submit], button {
     background-color: $teal;
     color: white;
     border: none;
+}
+
+.saved_trip {
+    font-size: 0.6em;
+    border-top: 1px solid $blue;
+}
+
+button.remove {
+    background: none;
+    border: none;
+    cursor: pointer;
+    width: min-content;
 }
