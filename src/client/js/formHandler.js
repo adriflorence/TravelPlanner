@@ -56,11 +56,14 @@ function buildInnerHTML(response, city, start_date, end_date = null) {
 function buildMessage(city, start_date, end_date){
 
     let countdown = daysBetween(new Date(), new Date(start_date));
+    let countdown_message = '';
+    countdown > 0 ? countdown_message = `Your trip is in ${countdown} days.` : countdown_message = `Your trip is tomorrow.`;
+
     if(!end_date){
-        return `You are going to ${city} on ${start_date}. Your trip is in ${countdown} days.`
+        return `You are going to ${city} on ${start_date}. ${countdown_message}`;
     } else {
         let days = daysBetween(new Date(start_date), new Date(end_date));
-        return `You are going to ${city} for ${days} days on ${start_date}. Your trip is in ${countdown} days.`
+        return `You are going to ${city} for ${days} days on ${start_date}. ${countdown_message}`;
     }
 }
 
